@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuonuo - Fotógrafa en Madrid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav .language-switcher {
+            display: flex;
+        }
+        nav .language-switcher a {
+            margin-left: 10px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #444;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery div {
+            flex: 1 1 calc(33.333% - 10px);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        #language {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        .intro {
+            text-align: center;
+            padding: 50px;
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .intro button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="intro" id="intro">
+        <div>
+            <h2>Bienvenido a Nuonuo Fotografía</h2>
+            <button onclick="enterSite()">Entrar al Sitio</button>
+        </div>
+    </div>
+
+    <header id="header" class="hidden">
+        <h1>Nuonuo - Fotógrafa en Madrid</h1>
+    </header>
+    <nav id="nav" class="hidden">
+        <a href="#about">Sobre mí</a>
+        <a href="#portfolio">Portafolio</a>
+        <a href="#services">Servicios</a>
+        <a href="#contact">Contacto</a>
+        <div class="language-switcher">
+            <a href="#" onclick="switchLanguage('es')">ES</a>
+            <a href="#" onclick="switchLanguage('en')">EN</a>
+            <a href="#" onclick="switchLanguage('zh')">中文</a>
+        </div>
+    </nav>
+    <div class="container hidden" id="main-content">
+        <section id="about">
+            <h2 id="about-title">Sobre mí</h2>
+            <p id="about-text">Hola, soy Nuonuo, fotógrafa en Madrid. Transformo tus momentos más preciados en recuerdos eternos, ya sea en exteriores naturales o en la comodidad de tu hogar.</p>
+            <p>Con un estilo que combina la espontaneidad y la belleza profesional, capturo la esencia de tus seres queridos. Cada sesión es una aventura única, diseñada para reflejar tu historia y emociones.</p>
+            <p>Déjame ser parte de tus recuerdos, creando imágenes que hablarán por sí mismas, hoy y siempre. Mi dedicación es capturar momentos únicos y memorables para ti, brindando una experiencia personalizada y de alta calidad en cada sesión fotográfica.</p>
+        </section>
+        <section id="portfolio">
+            <h2 id="portfolio-title">Portafolio</h2>
+            <div class="gallery">
+                <div><img src="photo1.jpg" alt="Foto de boda"></div>
+                <div><img src="photo2.jpg" alt="Foto de pareja"></div>
+                <div><img src="photo3.jpg" alt="Retrato"></div>
+            </div>
+        </section>
+        <section id="services">
+            <h2 id="services-title">Servicios</h2>
+            <p id="services-text">Ofrezco una variedad de servicios fotográficos, incluyendo:</p>
+            <ul>
+                <li id="service1">Fotografía de bodas</li>
+                <li id="service2">Fotografía de parejas</li>
+                <li id="service3">Sesiones de retrato</li>
+                <li id="service4">Fotografía de familia</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2 id="contact-title">Contacto</h2>
+            <p id="contact-text">¿Te gustaría agendar una sesión o tienes alguna pregunta? Contáctame a través del siguiente correo electrónico:</p>
+            <p><a href="mailto:hillwanan@gmail.com" id="email-link">hillwanan@gmail.com</a></p>
+            <p id="social-media">Sígueme en redes sociales:</p>
+            <p>
+                <a href="https://instagram.com/hillwanan" target="_blank">Instagram</a> |
+                <a href="https://tiktok.com/@hillwanan" target="_blank">TikTok</a>
+            </p>
+        </section>
+    </div>
+    <footer id="footer" class="hidden">
+        <p>&copy; 2024 Nuonuo Fotografía. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function enterSite() {
+            document.getElementById('intro').classList.add('hidden');
+            document.getElementById('header').classList.remove('hidden');
+            document.getElementById('nav').classList.remove('hidden');
+            document.getElementById('main-content').classList.remove('hidden');
+            document.getElementById('footer').classList.remove('hidden');
+        }
+
+        function switchLanguage(lang) {
+            var elements = {
+                es: {
+                    aboutTitle: 'Sobre mí',
+                    aboutText: 'Hola, soy Nuonuo, fotógrafa en Madrid. Transformo tus momentos más preciados en recuerdos eternos, ya sea en exteriores naturales o en la comodidad de tu hogar.',
+                    portfolioTitle: 'Portafolio',
+                    servicesTitle: 'Servicios',
+                    servicesText: 'Ofrezco una variedad de servicios fotográficos, incluyendo:',
+                    service1: 'Fotografía de bodas',
+                    service2: 'Fotografía de parejas',
+                    service3: 'Sesiones de retrato',
+                    service4: 'Fotografía de familia',
+                    contactTitle: 'Contacto',
+                    contactText: '¿Te gustaría agendar una sesión o tienes alguna pregunta? Contáctame a través del siguiente correo electrónico:',
+                    emailLink: 'hillwanan@gmail.com',
+                    socialMedia: 'Sígueme en redes sociales:'
+                },
+                en: {
+                    aboutTitle: 'About Me',
+                    aboutText: 'Hello, I am Nuonuo, a photographer in Madrid. I transform your most precious moments into eternal memories, whether in natural outdoor settings or the comfort of your home.',
+                    portfolioTitle: 'Portfolio',
+                    servicesTitle: 'Services',
+                    servicesText: 'I offer a variety of photography services, including:',
+                    service1: 'Wedding Photography',
+                    service2: 'Couple Photography',
+                    service3: 'Portrait Sessions',
+                    service4: 'Family Photography',
+                    contactTitle: 'Contact',
+                    contactText: 'Would you like to schedule a session or have any questions? Contact me through the following email:',
+                    emailLink: 'hillwanan@gmail.com',
+                    socialMedia: 'Follow me on social media:'
+                },
+                zh: {
+                    aboutTitle: '关于我',
+                    aboutText: '你好，我是糯糯，马德里的摄影师。我将你最珍贵的时刻变成永恒的记忆，无论是在自然户外环境中还是在你家的舒适环境中。',
+                    portfolioTitle: '作品集',
+                    servicesTitle: '服务内容',
+                    servicesText: '我提供各种摄影服务，包括：',
+                    service1: '婚礼摄影',
+                    service2: '情侣摄影',
+                    service3: '肖像摄影',
+                    service4: '家庭摄影',
+                    contactTitle: '联系方式',
+                    contactText: '你想预约拍摄还是有任何问题？请通过以下电子邮件与我联系：',
+                    emailLink: 'hillwanan@gmail.com',
+                    socialMedia: '关注我的社交媒体'
+                }
+            };
+
+            document.getElementById('about-title').innerText = elements[lang].aboutTitle;
+            document.getElementById('about-text').innerText = elements[lang].aboutText;
+            document.getElementById('portfolio-title').innerText = elements[lang].portfolioTitle;
+            document.getElementById('services-title').innerText = elements[lang].servicesTitle;
+            document.getElementById('services-text').innerText = elements[lang].servicesText;
+            document.getElementById('service1').innerText = elements[lang].service1;
+            document.getElementById('service2').innerText = elements[lang].service2;
+            document.getElementById('service3').innerText = elements[lang].service3;
+            document.getElementById('service4').innerText = elements[lang].service4;
+            document.getElementById('contact-title').innerText = elements[lang].contactTitle;
+            document.getElementById('contact-text').innerText = elements[lang].contactText;
+            document.getElementById('email-link').innerText = elements[lang].emailLink;
+            document.getElementById('social-media').innerText = elements[lang].socialMedia;
+        }
+
+        // Set default language
+        switchLanguage('es');
+    </script>
+</body>
+</html>
